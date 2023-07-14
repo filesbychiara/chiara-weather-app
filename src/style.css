@@ -69,10 +69,6 @@ h1 {
  font-weight: 400;
 }
 
-.units {
-    cursor: pointer;
-}
-
 .currentForcast{
     margin: 0 auto;
     padding: 0 auto;
