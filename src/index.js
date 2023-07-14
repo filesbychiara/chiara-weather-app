@@ -74,6 +74,7 @@ function getForecast(coordinates) {
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#temperature");
   let dateElement = document.querySelector("#date");
+  let descriptionElement = document.querySelector("#description");
   let currentTime = new Date();
   let searchForm = document.querySelector("#search-bar");
   let currentLocationButton = document.querySelector("#current-location-btn");
@@ -83,6 +84,7 @@ function displayWeatherCondition(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   document.querySelector("#city").innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
