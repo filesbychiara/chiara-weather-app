@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/style.css">
     <title>Weather App | by Chiara</title>
 </head>
 <body>
@@ -33,11 +33,13 @@
         <div class="weather-box">
             <h1 id="city">London</h1>
             <p id="date"><!--Date & Time--></p>
-            <img src=""/>
-            <p>
-            <span class="temperature" id="temperature"></span><span class="units"><a href="#"> °C</a> <!--| <a href="#">°F</a>--></span>
-            </p>
-        </div>
+            <div class="currentForcast">
+                    <img src="#"/
+                    alt=""
+                    id="icon">
+                    <span class="temperature" id="temperature"></span><span class="units"><a href="#"> °C</a> | <a href="#">°F</a></span>
+                </div>
+                </div>
 
         <div class="weather-details" id="description">
             <ul>
@@ -58,8 +60,8 @@
         </div>
 
     </div>
-    <footer><a href="https://github.com/filesbychiara">Open-source code</a> by Chiara</footer>
-    <script src="index.js"></script>
+    <footer><a href="https://github.com/filesbychiara" target="_blank">Open-source code</a> by Chiara</footer>
+    <script src="/src/index.js"></script>
     <script src="https://kit.fontawesome.com/fe46c7f43a.js" crossorigin="anonymous"></script>
 </body>
 </html>

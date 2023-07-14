@@ -24,28 +24,17 @@ function formatDate(date) {
 }
 
 function displayWeatherCondition(response) {
-  let dateElement = document.querySelector("#date");
-  let currentTime = new Date();
-  let searchForm = document.querySelector("#search-bar");
-  let currentLocationButton = document.querySelector("#current-location-btn");
-  let iconElement = document.querySelector("#icon");
-  
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#icon").innerHTML = response.data.weather;
-  
-  currentLocationButton.addEventListener("click", getCurrentLocation);
-  searchForm.addEventListener("submit", handleSubmit);
-  dateElement.innerHTML = formatDate(currentTime);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
 
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
+
 function searchCity(city) {
   let APIKey = "8cd9be374c7c96c39a9fe73f4bf2f055";
   let APIUrl = `https://API.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`;
@@ -70,16 +59,26 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
-}
+//function convertToFahrenheit(event) {
+  //  event.preventDefault();
+    //let temperatureElement = document.querySelector("#temperature");
+    //temperatureElement.innerHTML = 66;
+//}
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
-}
+//function convertToCelsius(event) {
+  //  event.preventDefault();
+    //let temperatureElement = document.querySelector("#temperature");
+    //temperatureElement.innerHTML = 19;
+//}
+
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
+
+let searchForm = document.querySelector("#search-bar");
+searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector("#current-location-btn");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Hong Kong");

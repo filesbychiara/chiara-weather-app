@@ -24,7 +24,7 @@ a:active {
 .container {
     position: relative;
     width: 500px;
-    height: 700px;
+    height: 600px;
     background-color: #fff;
     padding: 28px 32px;
     border-radius: 18px;
@@ -73,13 +73,9 @@ h1 {
     cursor: pointer;
 }
 
-.currentForcast{
-    margin: 0 auto;
-    padding: 0 auto;
-}
 .weather-box img {
-    width: 20%;
-    padding-bottom: 30px;
+    width: 60%;
+    margin-top: 2px;
 }
 
 .weather-box p {
@@ -112,7 +108,7 @@ li {
 }
 
 .weather-details {
-    margin-top: 10px;
+    margin-top: 32px;
 }
 
 .weather-details span {
